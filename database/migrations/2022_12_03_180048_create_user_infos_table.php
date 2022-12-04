@@ -15,8 +15,9 @@ return new class extends Migration
     {
         Schema::create('user_infos', function (Blueprint $table) {
             $table->id();
-            $table -> string('name');
-            $table->string('profile_picture');
+            $table->string('profession_place');
+            $table->string('profile_image');
+            $table->foreignId('blood_id')->constrained('bloods');
             $table->foreignId('user_id')->constrained();
             $table->timestamps();
         });

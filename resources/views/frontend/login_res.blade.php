@@ -4,7 +4,14 @@
 
     <link rel="stylesheet" href="assets/login_res/style.css">
     <div class="cont">
-        <div class="form sign-in">
+        @include('frontend.errors')
+        @if(session('success'))
+            <span class="alert alert-success">{{session('success')}}</span>
+        @endif
+        @if(session('failed'))
+            <span class="alert alert-danger">{{session('failed')}}</span>
+        @endif
+        <div class=" sign-in">
             <h2>Welcome back,</h2>
             <form action="{{route('submit.login')}}" method="post">
                 {{csrf_field()}}
@@ -38,22 +45,36 @@
                 </div>
             </div>
             <div class="form sign-up">
-                <h2>Time to feel like home,</h2>
-                <form action="{{route('submit.login')}}" method="post">
+                <h2>Join With Us</h2>
+                <form action="{{route('submit.registration')}}" method="post">
                     {{csrf_field()}}
                 <label>
                     <span>Name</span>
                     <input type="text" name="name"/>
                 </label>
                 <label>
-                    <span>Email</span>
-                    <input type="email" name="email"/>
+                    <span>Phone</span>
+                    <input type="number" name="phone"/>
                 </label>
                 <label>
                     <span>Password</span>
                     <input type="password" name="password"/>
                 </label>
                     <br>
+
+                        <select name="role" class="role">
+                            <option selected>Select Your Role</option>
+                            <option value="2">Student</option>
+                            <option value="3">Teacher</option>
+                            <option value="4">Doctor</option>
+                            <option value="5">Pharmacy Owner</option>
+                        </select>
+
+                    <br>
+                    <br>
+                    <br>
+
+
                     <input type="submit" class="submit" value="Sign Up">
                 </form>
             </div>

@@ -15,6 +15,8 @@ return new class extends Migration
     {
         Schema::create('apartments', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('apartment_by')->constrained('users');
+            $table->foreignId('schedule_id')->constrained('doctor_schedules');
             $table->timestamps();
         });
     }

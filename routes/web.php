@@ -20,4 +20,5 @@ Route::get('/about', [frontend::class,'about'])->name('about');
 Route::get('/doctor', [frontend::class,'doctor'])->name('doctor');
 Route::get('/login', [Auth::class,'index'])->name('login');
 Route::post('/login', [Auth::class,'login'])->name('submit.login');
+Route::post('/registration', [Auth::class,'registration'])->name('submit.registration');
 

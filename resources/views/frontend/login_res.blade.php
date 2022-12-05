@@ -16,8 +16,8 @@
             <form action="{{route('submit.login')}}" method="post">
                 {{csrf_field()}}
                 <label>
-                    <span>Email</span>
-                    <input type="email" name="email"/>
+                    <span>Phone</span>
+                    <input type="number" name="phone"/>
                 </label>
                 <label>
                     <span>Password</span>

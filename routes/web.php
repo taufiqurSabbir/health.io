@@ -1,7 +1,7 @@
 <?php
 
-use App\Http\Controllers\Auth;
 use App\Http\Controllers\frontend;
+use App\Http\Controllers\login_res;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -18,7 +18,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('/',[frontend::class, 'home'])->name('home');
 Route::get('/about', [frontend::class,'about'])->name('about');
 Route::get('/doctor', [frontend::class,'doctor'])->name('doctor');
-Route::get('/login', [Auth::class,'index'])->name('login');
-Route::post('/login', [Auth::class,'login'])->name('submit.login');
-Route::post('/registration', [Auth::class,'registration'])->name('submit.registration');
+Route::get('/login', [login_res::class,'index'])->name('login');
+Route::post('/login', [login_res::class,'login'])->name('submit.login');
+Route::post('/registration', [login_res::class,'registration'])->name('submit.registration');
+Route::get('/logout', [login_res::class,'logout'])->name('logout');
 
